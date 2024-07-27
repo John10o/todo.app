@@ -30,7 +30,16 @@ class MyThemeData {
           titleLarge: GoogleFonts.poppins(
               fontSize: 22,
               fontWeight: FontWeight.bold,
-              color: AppColor.whiteColor)));
+            color: AppColor.whiteColor),
+        titleMedium: GoogleFonts.poppins(
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+            color: AppColor.blackColor),
+        titleSmall: GoogleFonts.poppins(
+            fontSize: 16,
+            fontWeight: FontWeight.normal,
+            color: AppColor.blackColor),
+      ));
 
   static final ThemeData darkTheme = ThemeData(
       primaryColor: AppColor.primaryAppColor,
@@ -59,5 +68,14 @@ class MyThemeData {
           titleLarge: GoogleFonts.poppins(
               fontSize: 22,
               fontWeight: FontWeight.bold,
-              color: AppColor.blackColor)));
+            color: AppColor.blackColor),
+        titleMedium: GoogleFonts.poppins(
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+            color: AppColor.whiteColor),
+        titleSmall: GoogleFonts.poppins(
+            fontSize: 16,
+            fontWeight: FontWeight.normal,
+            color: AppColor.whiteColor),
+      ));
 }

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:todo_list/app_color.dart';
+import 'package:todo_list/settings/settings.dart';
+import 'package:todo_list/task_list/add_task_bottom_sheet.dart';
+import 'package:todo_list/task_list/task_list_tab.dart';
 
 class HomScreen extends StatefulWidget {
   static const String routeName = 'home_screen';
@@ -18,7 +21,9 @@ class _HomScreenState extends State<HomScreen> {
         backgroundColor: AppColor.primaryAppColor,
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          showAddTaskBottomSheet();
+        },
         child: Icon(
           Icons.add,
           color: AppColor.whiteColor,
@@ -54,10 +59,16 @@ class _HomScreenState extends State<HomScreen> {
             child: Text('To Do List',
                 style: Theme.of(context).textTheme.titleLarge),
           ),
+          Expanded(child: tabs[selectedIndex]),
         ],
       ),
     );
   }
 
-  List<String> tabs = [];
+  List<Widget> tabs = [TaskListTab(), Settings()];
+
+  void showAddTaskBottomSheet() {
+    showModalBottomSheet(
+        context: context, builder: (context) => AddTaskBottomSheet());
+  }
 }
